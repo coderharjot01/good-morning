@@ -77,4 +77,33 @@ document.addEventListener('DOMContentLoaded', () => {
       // Optional: Add some confetti or extra "wow" here via JS if desired later
     }, 400);
   });
+
+  // Flying Emojis Logic
+  const emojiContainer = document.getElementById('flying-emoji-container');
+  const emojis = ['🎈', '❤️', '😘', '💋', '💕', '🌹'];
+
+  const createEmoji = () => {
+    const el = document.createElement('div');
+    el.classList.add('flying-emoji');
+    el.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+
+    // Random positioning and sizing
+    const left = Math.random() * 100; // 0 to 100%
+    const size = Math.random() * 1.5 + 1.5; // 1.5rem to 3rem
+    const duration = Math.random() * 10 + 10; // 10s to 20s
+
+    el.style.left = `${left}%`;
+    el.style.fontSize = `${size}rem`;
+    el.style.animationDuration = `${duration}s`;
+
+    // Cleanup after animation
+    el.addEventListener('animationend', () => {
+      el.remove();
+    });
+
+    emojiContainer.appendChild(el);
+  };
+
+  // Start creating emojis
+  setInterval(createEmoji, 600); // New emoji every 600ms
 });
