@@ -1,0 +1,80 @@
+import './style.css'
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Elements
+  const rotateElement = document.getElementById('rotating-text');
+  const openBtn = document.getElementById('open-btn');
+  const messageContainer = document.getElementById('message-container');
+  const mainMessageEl = document.getElementById('main-message');
+  const subMessageEl = document.getElementById('sub-message');
+
+  // Random Message Logic
+  const messages = [
+    {
+      main: `"You make my world brighter just by being in it. 🌍✨ You are my favorite thought and my happiest place. I hope your day is as sweet and wonderful as you are! 💖"`,
+      sub: `Sending you giant bear hugs! 🐻💕`
+    },
+    {
+      main: `"Good morning to the person who holds my heart! 🔒❤️ Just thinking of you puts the biggest smile on my face. Have the best day ever!"`,
+      sub: `Thinking of you always! 💭✨`
+    },
+    {
+      main: `"Every morning is a gift because it's another day I get to cherish you. 🎁 You are my sunshine even on cloudy days."`,
+      sub: `You are incredible! 🌟`
+    },
+    {
+      main: `"I hope your coffee is hot and your day is filled with little miracles. ☕✨ Remember, you are adored beyond measure."`,
+      sub: `Cheering for you today! 🎉`
+    },
+    {
+      main: `"Just a little reminder that you are beautiful, capable, and amazing. Don't let anyone dull your sparkle today! ✨💎"`,
+      sub: `Shine bright my star! 💖`
+    }
+  ];
+
+  // Pick a random message
+  const randomMsg = messages[Math.floor(Math.random() * messages.length)];
+  mainMessageEl.textContent = randomMsg.main;
+  subMessageEl.textContent = randomMsg.sub;
+
+  // Rotating Text Logic
+  const words = ["Sunshine ☀️", "Beautiful 🌸", "Dreamer ✨", "Radiant 💖", "Star 🌟"];
+  let wordIndex = 0;
+
+  const cycleText = () => {
+    // Start exit animation
+    rotateElement.classList.add('fade-out');
+
+    setTimeout(() => {
+      // Change text
+      wordIndex = (wordIndex + 1) % words.length;
+      rotateElement.textContent = words[wordIndex];
+
+      // Reset for entry animation
+      rotateElement.classList.remove('fade-out');
+
+      // Trigger Reflow to restart css animation
+      void rotateElement.offsetWidth;
+
+      // The element has the 'slideUpFade' animation by default in CSS, 
+      // so removing 'fade-out' and triggering reflow renders it again.
+    }, 500); // Matches the 0.5s CSS exit duration
+  };
+
+  // Start rotation loop
+  setInterval(cycleText, 3500);
+
+  // Interaction Logic
+  openBtn.addEventListener('click', () => {
+    // 1. Animate button out
+    openBtn.classList.add('hidden-btn');
+
+    // 2. Animate message in (short delay for smooth transition)
+    setTimeout(() => {
+      messageContainer.classList.remove('hidden');
+      messageContainer.classList.add('visible');
+
+      // Optional: Add some confetti or extra "wow" here via JS if desired later
+    }, 400);
+  });
+});

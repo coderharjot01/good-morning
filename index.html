@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Good Morning</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Outfit:wght@200;400;600&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <div id="app">
+    <div class="background-blobs">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
+    </div>
+
+    <div class="content">
+      <div class="greeting-container">
+        <h1 class="main-title">Good Morning</h1>
+        <div class="rotating-text-wrapper">
+          <span id="rotating-text" class="rotating-text">Sunshine</span>
+        </div>
+      </div>
+
+      <div class="interaction-zone">
+        <button id="open-btn" class="glass-btn">
+          Open Me
+        </button>
+
+        <div id="message-container" class="message-container hidden">
+          <p id="main-message" class="sweet-message">
+            "You make my world brighter just by being in it. 🌍✨ You are my favorite thought and my happiest place. I
+            hope your day is as sweet and wonderful as you are! 💖"
+          </p>
+          <p id="sub-message" class="sub-message">Sending you giant bear hugs! 🐻💕</p>
+          <p class="signature">- from Harry 🌹</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
