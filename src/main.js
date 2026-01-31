@@ -11,24 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // Random Message Logic
   const messages = [
     {
-      main: `"You make my world brighter just by being in it. 🌍✨ You are my favorite thought and my happiest place. I hope your day is as sweet and wonderful as you are! 💖"`,
-      sub: `Sending you giant bear hugs! 🐻💕`
-    },
-    {
-      main: `"Good morning to the person who holds my heart! 🔒❤️ Just thinking of you puts the biggest smile on my face. Have the best day ever!"`,
-      sub: `Thinking of you always! 💭✨`
-    },
-    {
-      main: `"Every morning is a gift because it's another day I get to cherish you. 🎁 You are my sunshine even on cloudy days."`,
-      sub: `You are incredible! 🌟`
-    },
-    {
-      main: `"I hope your coffee is hot and your day is filled with little miracles. ☕✨ Remember, you are adored beyond measure."`,
-      sub: `Cheering for you today! 🎉`
-    },
-    {
-      main: `"Just a little reminder that you are beautiful, capable, and amazing. Don't let anyone dull your sparkle today! ✨💎"`,
-      sub: `Shine bright my star! 💖`
+      main: `"I am really sorry about last night... I fell asleep early. 😔😴"`,
+      sub: `Forgive me? 🥺💖`
     }
   ];
 
